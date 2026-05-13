@@ -16,7 +16,7 @@ const images = [
   "/gallery/g1 (4).png", "/gallery/g1 (6).png", "/gallery/g1 (7).png",
 ];
 
-function ParqueeRow({ items, baseVelocity = 100, direction = 1 }) {
+function ParqueeRow({ items, baseVelocity = 100, direction = 1 }: { items: string[], baseVelocity?: number, direction?: number }) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -28,7 +28,7 @@ function ParqueeRow({ items, baseVelocity = 100, direction = 1 }) {
    * This ensures the x-position stays between -20% and -45%
    * creating a seamless jump-back for the infinite loop.
    */
-  const wrap = (min, max, v) => {
+  const wrap = (min: number, max: number, v: number) => {
     const rangeSize = max - min;
     return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
   };
