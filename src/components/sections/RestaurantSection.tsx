@@ -6,24 +6,24 @@ import { ArrowRight, Wine, UtensilsCrossed, Coffee } from "lucide-react";
 const menuItems = [
   {
     icon: <Wine className="w-6 h-6 text-accent mb-4" strokeWidth={1.5} />,
-    category: "Signature Cocktails",
-    name: "Green City Mojito",
-    description: "A refreshing blend of premium white rum, fresh mint, lime, and a splash of sparkling water.",
-    price: "₹1,150",
+    category: "Lounge Bar",
+    name: "The Outlaws Bar",
+    description: "Texas themed, most exclusive Lounge Bar and Dinner with the most competitive prices.",
+    price: "",
   },
   {
     icon: <UtensilsCrossed className="w-6 h-6 text-accent mb-4" strokeWidth={1.5} />,
-    category: "Main Course",
-    name: "Grilled Atlantic Salmon",
-    description: "Freshly caught salmon, perfectly grilled and served with seasonal roasted vegetables and lemon butter sauce.",
-    price: "₹2,650",
+    category: "Multi-Cuisine",
+    name: "Harmonica",
+    description: "Indian themed multi-cuisine restaurant for breakfast, lunch and dinner.",
+    price: "",
   },
   {
     icon: <Coffee className="w-6 h-6 text-accent mb-4" strokeWidth={1.5} />,
-    category: "Desserts",
-    name: "Classic New York Cheesecake",
-    description: "Rich and creamy cheesecake with a graham cracker crust, topped with fresh berries.",
-    price: "₹950",
+    category: "Traditional & Chinese",
+    name: "Kesari Dhaba",
+    description: "Restaurant with mouth-watering traditional and Chinese Cuisine.",
+    price: "",
   },
 ];
 
@@ -34,37 +34,49 @@ export default function RestaurantSection() {
         
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start relative">
           
-          {/* Left Side: Images Grid (Sticky) */}
+          {/* Left Side: Images Grid & Info (Sticky) */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 grid grid-cols-2 gap-4 relative lg:sticky lg:top-32"
+            className="w-full lg:w-1/2 relative lg:sticky lg:top-32 flex flex-col gap-8"
           >
-            <div className="flex flex-col gap-4 mt-12">
-              <div className="relative aspect-3/4 w-full overflow-hidden rounded-tl-[4rem] rounded-br-2xl shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format&fit=crop"
-                  alt="Fine dining dish"
-                  className="w-full h-full object-cover"
-                />
+            <div className="grid grid-cols-2 gap-4 relative">
+              <div className="flex flex-col gap-4 mt-12">
+                <div className="relative aspect-3/4 w-full overflow-hidden rounded-tl-[4rem] rounded-br-2xl shadow-xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format&fit=crop"
+                    alt="Fine dining dish"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-4">
+                <div className="relative aspect-3/4 w-full overflow-hidden rounded-tr-[4rem] rounded-bl-2xl shadow-xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop"
+                    alt="Signature cocktails"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Decorative Badge */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-olive rounded-full border-[6px] border-cream flex flex-col items-center justify-center text-center p-4 z-20 shadow-2xl">
+                <span className="font-serif text-2xl text-accent">5★</span>
+                <span className="text-[0.65rem] tracking-widest uppercase mt-1 text-cream">World Class<br/>Dining</span>
               </div>
             </div>
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-3/4 w-full overflow-hidden rounded-tr-[4rem] rounded-bl-2xl shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop"
-                  alt="Signature cocktails"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* Decorative Badge */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-olive rounded-full border-[6px] border-cream flex flex-col items-center justify-center text-center p-4 z-20 shadow-2xl">
-              <span className="font-serif text-2xl text-accent">5★</span>
-              <span className="text-[0.65rem] tracking-widest uppercase mt-1 text-cream">World Class<br/>Dining</span>
+
+            {/* Happy Hours block moved to left side under images */}
+            <div className="bg-white/50 p-6 rounded-xl border border-olive/10 shadow-sm mt-4">
+              <h4 className="font-semibold text-olive mb-3 uppercase tracking-wider text-xs">Full Day Happy Hours at Bar</h4>
+              <ul className="space-y-2 text-sm text-olive/80 list-disc list-inside">
+                <li>Buy 1 get 1 free on domestic liquor</li>
+                <li>Buy 2 get 1 free on imported liquor brands</li>
+                <li>Beer offer (buy 2 get 1 free on all brands)</li>
+              </ul>
             </div>
           </motion.div>
 
@@ -82,8 +94,8 @@ export default function RestaurantSection() {
                 Experience World-Class <br className="hidden md:block" />
                 Dining & Drinks
               </h2>
-              <p className="text-olive/70 text-sm md:text-base leading-relaxed max-w-lg">
-                Indulge in a culinary journey crafted by our expert chefs. From exquisite main courses to hand-crafted signature cocktails, every detail is designed to delight your senses.
+              <p className="text-olive/70 text-sm md:text-base leading-relaxed max-w-lg mb-4">
+                Indulge in a culinary journey crafted by our expert chefs. Room service is available from 7.00 AM to 11.00 PM for your convenience.
               </p>
             </div>
 

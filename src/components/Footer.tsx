@@ -11,8 +11,7 @@ export default function Footer() {
           
           <div className="flex flex-col items-center md:items-start col-span-1 md:col-span-1">
             <Link href="/" className="flex flex-col items-center md:items-start group mb-6">
-              <span className="font-serif text-3xl tracking-widest font-bold text-cream">HOTEL</span>
-              <span className="text-[0.6rem] tracking-[0.3em] uppercase text-cream opacity-80">City Green</span>
+              <img src="/logo.png" alt="Hotel City Green" className="h-20 drop-shadow-md brightness-0 invert" />
             </Link>
             <p className="text-sm text-cream/70 leading-relaxed mb-6">
               Experience the perfect blend of luxury, comfort, and world-class dining in the heart of the city.
@@ -37,17 +36,19 @@ export default function Footer() {
             <h4 className="text-xs tracking-widest uppercase font-semibold text-cream mb-6">Reservation</h4>
             <div className="text-sm text-cream/70 space-y-3">
               <p>Call Us</p>
-              <p className="font-serif text-xl italic text-accent">+91 98765 43210</p>
-              <p className="hover:text-accent cursor-pointer transition-colors">Book a room online</p>
+              <p className="font-serif text-xl italic text-accent">+91 97191 45002</p>
+              <p className="font-serif text-xl italic text-accent">+91 84331 12437</p>
+              <p className="font-serif text-xl italic text-accent">0135-2642112, 3</p>
+              <p className="hover:text-accent cursor-pointer transition-colors mt-2 text-xs">hotelcitygreenddn@gmail.com</p>
             </div>
           </div>
 
           <div className="flex flex-col items-center md:items-start">
             <h4 className="text-xs tracking-widest uppercase font-semibold text-cream mb-6">Location</h4>
             <div className="text-sm text-cream/70 space-y-2">
-              <p>123 Hotel Street</p>
-              <p>City Green, NY 10001</p>
-              <p>United States</p>
+              <p>ISBT Chowk, Saharanpur Road</p>
+              <p>Dehradun - 248001</p>
+              <p>Uttarakhand, India</p>
               <a href="#" className="inline-block mt-4 text-xs font-semibold text-accent uppercase tracking-widest hover:text-white transition-colors">Get Directions</a>
             </div>
           </div>

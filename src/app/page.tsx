@@ -4,6 +4,7 @@ import ParallaxSection from "@/components/sections/ParallaxSection";
 import RoomsSection from "@/components/sections/RoomsSection";
 import AmenitiesSection from "@/components/sections/AmenitiesSection";
 import RestaurantSection from "@/components/sections/RestaurantSection";
+import GallerySection from "@/components/sections/GallerySection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
       <RoomsSection />
       <AmenitiesSection />
       <RestaurantSection />
-      {/* <GallerySection /> */}
+      <GallerySection />
       <Footer />
     </>
   );

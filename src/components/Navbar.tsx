@@ -32,15 +32,15 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out ${
         isScrolled 
-          ? "bg-white/90 backdrop-blur-2xl saturate-150 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-b border-olive/10 text-olive-dark rounded-b-3xl" 
-          : "bg-linear-to-b from-black/60 to-transparent py-8 border-transparent text-cream"
+          ? "bg-white/90 backdrop-blur-2xl saturate-150 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-b border-olive/10 text-olive-dark rounded-b-3xl" 
+          : "bg-linear-to-b from-black/60 to-transparent py-4 border-transparent text-cream"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-4 md:px-12">
         <div className="flex items-center justify-between lg:grid lg:grid-cols-3 lg:items-center w-full">
           
           {/* Mobile Menu Toggle (Left on mobile) */}
-          <div className="lg:hidden flex-1">
+          <div className="flex-1 lg:hidden">
             <button
               className="text-current focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -60,10 +60,12 @@ export default function Navbar() {
           </nav>
 
           {/* Center Logo */}
-          <Link href="/" className="flex flex-col items-center justify-center group z-10 mx-auto">
-            <span className="font-serif text-3xl tracking-widest font-bold drop-shadow-md">HOTEL</span>
-            <span className="text-[0.65rem] tracking-[0.4em] uppercase opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-md mt-1">City Green</span>
+          <Link href="/" className="flex flex-col items-center justify-center group z-10 shrink-0 mx-auto">
+            <img src="/logo.png" alt="Hotel City Green" className="h-20 sm:h-24 md:h-28 drop-shadow-md transition-transform duration-300 group-hover:scale-105" />
           </Link>
+
+          {/* Empty spacer for mobile right to keep logo centered */}
+          <div className="flex-1 lg:hidden"></div>
 
           {/* Desktop Right Nav & Actions */}
           <div className="hidden lg:flex items-center justify-end space-x-10">

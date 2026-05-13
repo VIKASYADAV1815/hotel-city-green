@@ -2,21 +2,33 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, Info } from "lucide-react";
 
 const rooms = [
   {
     id: 1,
-    name: "Family room",
-    price: "₹18,500 / night",
-    image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800&auto=format&fit=crop",
+    name: "Double room",
+    price: "₹4,000 - ₹7,000 / night",
+    image: "/gallery/g1 (5).png",
     badge: "Most Popular",
+    tariffs: [
+      { plan: "European", price: "₹4000/-" },
+      { plan: "Continental", price: "₹5000/-" },
+      { plan: "Modified American", price: "₹6000/-" },
+      { plan: "American", price: "₹7000/-" },
+    ]
   },
   {
     id: 2,
-    name: "Double room",
-    price: "₹14,000 / night",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop",
+    name: "Single room",
+    price: "₹3,500 - ₹6,000 / night",
+    image: "/gallery/g1 (9).png",
+    tariffs: [
+      { plan: "European", price: "₹3500/-" },
+      { plan: "Continental", price: "₹4000/-" },
+      { plan: "Modified American", price: "₹5000/-" },
+      { plan: "American", price: "₹6000/-" },
+    ]
   }
 ];
 
@@ -55,7 +67,7 @@ export default function RoomsSection() {
   return (
     <section id="rooms" className="bg-cream py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="flex justify-between items-end mb-16 border-b border-olive/20 pb-8">
+        <div className="flex justify-between items-end mb-8 border-b border-olive/20 pb-8">
           <h2 className="font-serif text-4xl md:text-5xl text-olive">
             Rooms <span className="italic font-light">& Suites</span>
           </h2>
@@ -63,6 +75,32 @@ export default function RoomsSection() {
             <span className="text-xs tracking-widest text-accent uppercase font-semibold">View All Rooms</span>
             <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center group-hover:bg-accent-hover transition-colors">
               <ArrowRight className="text-cream" size={16} />
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-16 bg-olive-dark text-cream p-8 md:p-10 rounded-2xl shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+          <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+            <div className="flex-1">
+              <h3 className="font-serif text-2xl md:text-3xl mb-6 text-cream flex items-center gap-3">
+                <Info className="text-accent" size={28} />
+                Good to Know
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-cream/80">
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                  <p>Extra bed available at <strong className="text-white">₹800/-</strong>. Taxes as applicable.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                  <p>Children below 5 years stay complimentary. All prices in INR.</p>
+                </div>
+                <div className="flex items-start gap-3 md:col-span-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                  <p>Please contact the front office for group tariffs and reservations. Packages and group tariff is applicable on a group of minimum 15 pax.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -81,7 +119,7 @@ export default function RoomsSection() {
                 <h3 className="font-serif text-2xl text-olive">{room.name}</h3>
                 <span className="text-sm text-olive/60">{room.price}</span>
               </div>
-              <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg shadow-lg">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
                   src={room.image}
                   alt={room.name}
@@ -92,6 +130,20 @@ export default function RoomsSection() {
                     {room.badge}
                   </div>
                 )}
+              </div>
+              <div className="mt-6">
+                <h4 className="font-semibold text-olive mb-4 uppercase tracking-wider text-[10px] flex items-center gap-2">
+                  <div className="w-8 h-px bg-accent"></div> 
+                  Tariff Plans
+                </h4>
+                <div className="grid grid-cols-2 gap-3">
+                  {room.tariffs?.map((t, i) => (
+                    <div key={i} className="bg-white p-3 rounded-xl border border-olive/5 flex flex-col justify-center items-start shadow-xs hover:border-accent/30 hover:shadow-md transition-all duration-300">
+                      <span className="text-[9px] uppercase tracking-widest text-olive/50 mb-1">{t.plan}</span>
+                      <span className="font-serif text-lg text-accent">{t.price}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

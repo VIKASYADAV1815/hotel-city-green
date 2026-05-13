@@ -1,16 +1,16 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { Wifi, Dumbbell, Waves, Car, Coffee, ShieldCheck } from "lucide-react";
+import { Users, PartyPopper, CheckCircle, Utensils, CalendarDays, Ban } from "lucide-react";
 import { useState, useRef } from "react";
 
 const amenities = [
-  { id: "pool", icon: Waves, title: "Infinity Pool", description: "Rooftop oasis with skyline views." },
-  { id: "gym", icon: Dumbbell, title: "Fitness Center", description: "24/7 elite athletic equipment." },
-  { id: "wifi", icon: Wifi, title: "Fiber Wi-Fi", description: "Seamless high-speed connectivity." },
-  { id: "cafe", icon: Coffee, title: "Artisan Café", description: "Fresh roasts by in-house baristas." },
-  { id: "parking", icon: Car, title: "Valet Parking", description: "Secure, complimentary valet service." },
-  { id: "security", icon: ShieldCheck, title: "24/7 Security", description: "Round-the-clock peace of mind." },
+  { id: "conference", icon: Users, title: "Conference & Banquet", description: "Well Appointed Hall (25 to 100 Pax), Banquet Hall (300 Pax), Lush Green Party Lawn (200 Pax)." },
+  { id: "banquet", icon: Utensils, title: "Banquet Menu", description: "Menu starts at ₹750/- per plate for weddings, receptions, anniversaries and birthday parties." },
+  { id: "meeting", icon: CalendarDays, title: "Conference Meetings", description: "Conference meeting starts at ₹499/- + taxes. Contact front office for reservations." },
+  { id: "kitty", icon: PartyPopper, title: "Kitty Party", description: "Starts at ₹249/- per plate. Perfect for small gatherings and celebrations." },
+  { id: "room", icon: CheckCircle, title: "Premium Rooms", description: "20 tastefully decorated air conditioned rooms with attached bathroom and 24 hrs running hot & cold water." },
+  { id: "cancellation", icon: Ban, title: "Cancellation Policy", description: "Within 24 hrs: No Refund. Within 48 hrs: 50% Refund. Before 48 hrs: 90% Refund." },
 ];
 
 // Motion variants for staggered container entry
@@ -80,7 +80,7 @@ export default function AnimatedCompactAmenities() {
             viewport={{ once: true, amount: 1 }}
             className="text-accent text-[10px] tracking-[0.4em] uppercase font-bold mb-2 block"
           >
-            The Collection
+            Facilities
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 10 }}
@@ -88,7 +88,7 @@ export default function AnimatedCompactAmenities() {
             viewport={{ once: true, amount: 1 }}
             className="font-serif text-3xl md:text-5xl"
           >
-            Curated <span className="italic font-light text-accent">Excellence</span>
+            Hotel <span className="italic font-light text-accent">Amenities</span>
           </motion.h2>
         </div>
 
